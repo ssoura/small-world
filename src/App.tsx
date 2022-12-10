@@ -25,7 +25,7 @@ const App = () => {
           </svg>
         </a>
       </header>
-      <main className="container flex flex-col justify-center items-center mb-16">
+      <main className="flex flex-col justify-center items-center mb-16">
         <PeopleList people={state.people} dispatch={dispatch} />
         <ViewConnections
           from={state.from}
@@ -38,7 +38,7 @@ const App = () => {
         className="w-full h-14 bg-gray-900
             fixed left-0 bottom-0
             flex justify-center items-center
-            text-white
+            text-white text-xs
             "
       >
         <AddPerson state={state} dispatch={dispatch} />

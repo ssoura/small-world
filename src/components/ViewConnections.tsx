@@ -79,65 +79,64 @@ const ViewConnections = ({
   };
 
   return (
-    <div className="w-[60%] mx-2 mt-4 flex flex-col ">
+    <div className="md:w-[60%] w-[90%] mx-2 mt-4 flex flex-col ">
       <div className="bg-main-500 p-2 px-4 rounded-xl w-auto">
         <p className="text-xl">View Degree of separation between two people</p>
       </div>
-      <div className="p-4 flex gap-4 justify-center">
-        <select
-          id="from"
-          name="from"
-          value={from}
-          onChange={handleChange}
-          placeholder="Select Person 1"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
-        >
-          <option value={-1} disabled>
-            Select Person 1
-          </option>
-          {Object.entries(people)?.map(([id, person]): JSX.Element | null => {
-            if (!(parseInt(id, 10) !== to)) return null;
-            return (
-              <option key={id} value={id} className="px-2 py-1 ">
-                {person.name}
-              </option>
-            );
-          })}
-        </select>
+      <div className="p-4 flex flex-col md:flex-row gap-4 justify-center">
+          <select
+            id="from"
+            name="from"
+            value={from}
+            onChange={handleChange}
+            placeholder="Select Person 1"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
+          >
+            <option value={-1} disabled>
+              Select Person 1
+            </option>
+            {Object.entries(people)?.map(([id, person]): JSX.Element | null => {
+              if (!(parseInt(id, 10) !== to)) return null;
+              return (
+                <option key={id} value={id} className="px-2 py-1 ">
+                  {person.name}
+                </option>
+              );
+            })}
+          </select>
 
-        <p className="px-1 py-2 text-lg">&</p>
-        <select
-          id="to"
-          name="to"
-          value={to}
-          onChange={handleChange}
-          placeholder="Select Person 2"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
-        >
-          <option value={-1} disabled>
-            Select Person 2
-          </option>
-          {Object.entries(people).map(([id, person]) => {
-            if (!(parseInt(id, 10) !== from)) return null;
-            return (
-              <option key={id} value={id} className="px-2 py-1 ">
-                {person.name}
-              </option>
-            );
-          })}
-        </select>
+          <p className="px-1 py-2 text-lg">&</p>
+          <select
+            id="to"
+            name="to"
+            value={to}
+            onChange={handleChange}
+            placeholder="Select Person 2"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
+          >
+            <option value={-1} disabled>
+              Select Person 2
+            </option>
+            {Object.entries(people).map(([id, person]) => {
+              if (!(parseInt(id, 10) !== from)) return null;
+              return (
+                <option key={id} value={id} className="px-2 py-1 ">
+                  {person.name}
+                </option>
+              );
+            })}
+          </select>
         <button
           type="button"
-          className="focus:outline-none text-white bg-main-700 hover:bg-main-800 focus:ring-2 focus:ring-main-300 rounded-lg  px-5 py-2 m-1"
+          className="w-full focus:outline-none text-white bg-main-700 hover:bg-main-800 focus:ring-2 focus:ring-main-300 rounded-lg  px-5 py-2 m-1"
           onClick={findConnection}
         >
           Find
         </button>
       </div>
       <div
-        className={`m-2 mb-8 py-2 w-full flex md:flex-col ${
-          mutualConnections?.length && "bg-main-500 rounded-lg"
-        }`}
+        className={`m-2 mb-8 py-2 w-full flex md:flex-col ${mutualConnections?.length && "bg-main-500 rounded-lg"
+          }`}
       >
         {mutualConnections?.map((connections) => (
           <div

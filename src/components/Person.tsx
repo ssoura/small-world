@@ -35,7 +35,7 @@ const Person = ({ id, person, people, connect, deletePerson }: PersonProps) => {
     connect(parseInt(`${connection.id}`, 10));
   };
   return (
-    <div className="px-2 py-4 flex flex-row justify-between items-center">
+    <div className="px-2 py-4 flex flex-col md:flex-row  justify-between items-center">
       <div className="flex items-center my-2">
         <GradientBox key={person.name} text={`${person.name}`} />
         <p className="px-2">is a friend of</p>

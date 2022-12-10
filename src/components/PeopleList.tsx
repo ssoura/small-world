@@ -11,8 +11,8 @@ const PeopleList = ({ people, dispatch }: PeopleListProps) => {
   const deletePerson = (id: number) =>
     dispatch({ type: ACTIONS.REMOVE_USER, payload: id });
   return (
-    <div className=" w-[60%] mt-6 flex flex-col gap-2">
-      <div className="bg-main-500 p-2 px-4 rounded-xl w-auto">
+    <div className="w-[85%] md:w-[60%] mt-6 flex flex-col gap-2">
+      <div className="bg-main-500 p-2 px-4 rounded-xl">
         <p className="text-xl text-bold">Relationships</p>
       </div>
       {Object.keys(people).length ? (
