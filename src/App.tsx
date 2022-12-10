@@ -38,7 +38,7 @@ const App = () => {
         className="w-full h-14 bg-gray-900
             fixed left-0 bottom-0
             flex justify-center items-center
-            text-white text-xl
+            text-white
             "
       >
         <AddPerson state={state} dispatch={dispatch} />

@@ -43,20 +43,23 @@ const AddPerson = ({ state, dispatch }: AddPersonProps) => {
           onChange={handleNameChange}
           className="px-1 py-1 rounded-md bg-gray-700 text-black border-none outline-green-500"
         />
-        <button
-          type="button"
-          className="focus:outline-none text-white bg-main-700 hover:bg-main-800 focus:ring-2 focus:ring-main-300 border-main-100 rounded-lg px-5 py-1"
-          onClick={handleAddUser}
-        >
-          Add Person
-        </button>
-        <button
-          type="button"
-          className="focus:outline-none text-white bg-main-700 hover:bg-main-800 focus:ring-2 focus:ring-main-300 rounded-lg px-5 py-1 "
-          onClick={() => loadSampleData()}
-        >
-          Fill with Example
-        </button>
+        <div className="flex">
+
+          <button
+            type="button"
+            className="focus:outline-none text-white bg-main-700 hover:bg-main-800 focus:ring-2 focus:ring-main-300 border-main-100 rounded-lg px-5 py-1"
+            onClick={handleAddUser}
+          >
+            Add
+          </button>
+          <button
+            type="button"
+            className="focus:outline-none text-white bg-main-700 hover:bg-main-800 focus:ring-2 focus:ring-main-300 rounded-lg px-5 py-1"
+            onClick={() => loadSampleData()}
+          >
+            Auto Fill
+          </button>
+        </div>
       </div>
     </>
   );
